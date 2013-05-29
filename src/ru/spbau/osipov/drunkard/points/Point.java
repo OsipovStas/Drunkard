@@ -1,7 +1,7 @@
 package ru.spbau.osipov.drunkard.points;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author Osipov Stanislav
@@ -9,6 +9,9 @@ import java.util.List;
 public class Point {
     private final int x;
     private final int y;
+
+
+    private final static Random r = new Random();
 
     @Override
     public String toString() {
@@ -27,14 +30,6 @@ public class Point {
 
         return x == point.x && y == point.y;
 
-    }
-
-    public List<Point> getAdjacentPoints() {
-        ArrayList<Point> adjacentPoints = new ArrayList<Point>();
-        for (Direction direction : Direction.values()) {
-            adjacentPoints.add(this.adjacentPoint(direction));
-        }
-        return adjacentPoints;
     }
 
     @Override
@@ -62,12 +57,10 @@ public class Point {
         return y;
     }
 
-    public Point adjacentPoint(Direction direction) {
-        return new Point(x + direction.getDx(), y + direction.getDy());
-    }
 
-    public Point randomAdjacentPoint() {
-        return adjacentPoint(Direction.getRandomDirection());
+    public Point randomAdjacentPoint(Topology topology) {
+        List<Point> adjacentPoints = topology.getAdjacentPoints(this);
+        return adjacentPoints.get(r.nextInt(adjacentPoints.size()));
     }
 
 }

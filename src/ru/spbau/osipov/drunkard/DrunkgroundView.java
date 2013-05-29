@@ -1,15 +1,22 @@
 package ru.spbau.osipov.drunkard;
 
+import ru.spbau.osipov.drunkard.points.HexTopology;
+import ru.spbau.osipov.drunkard.points.RectangularTopology;
+
 /**
  * @author Osipov Stanislav
  */
 public class DrunkgroundView {
     private final static int STEP_NUMBER = 500;
-    private Drunkground drunkGround;
+    private final Drunkground drunkGround;
     private boolean debug = false;
 
-    public DrunkgroundView() {
-        this.drunkGround = new Drunkground();
+    public DrunkgroundView(boolean hex) {
+        if (hex) {
+            this.drunkGround = new Drunkground(new HexTopology());
+        } else {
+            this.drunkGround = new Drunkground(new RectangularTopology());
+        }
     }
 
     public void setDebug(boolean debug) {

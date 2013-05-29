@@ -4,6 +4,7 @@ import ru.spbau.osipov.drunkard.ChangeListener;
 import ru.spbau.osipov.drunkard.GameObject;
 import ru.spbau.osipov.drunkard.MoveListener;
 import ru.spbau.osipov.drunkard.points.Point;
+import ru.spbau.osipov.drunkard.points.Topology;
 import ru.spbau.osipov.drunkard.statics.StaticGameObject;
 
 /**
@@ -12,15 +13,11 @@ import ru.spbau.osipov.drunkard.statics.StaticGameObject;
 public abstract class DynamicGameObject extends GameObject implements ChangeListener {
 
     private Point position;
-    private MoveListener drunkground;
+    private final MoveListener drunkground;
 
     protected DynamicGameObject(MoveListener drunkground, Point position) {
         this.drunkground = drunkground;
         this.position = position;
-    }
-
-    public void setDrunkground(MoveListener drunkground) {
-        this.drunkground = drunkground;
     }
 
 
@@ -36,6 +33,15 @@ public abstract class DynamicGameObject extends GameObject implements ChangeList
         drunkground.pickUpPerformed(fallen);
     }
 
+    protected void fireGoneEvent(DynamicGameObject mover) {
+        drunkground.gonePerformed(mover);
+    }
+
+    protected void fireEnterEvent(DynamicGameObject mover, Point enter) {
+        position = enter;
+        drunkground.enterPerformed(mover);
+    }
+
     @Override
     public void updatePosition(Point nextPosition) {
         position = nextPosition;
@@ -47,15 +53,11 @@ public abstract class DynamicGameObject extends GameObject implements ChangeList
         return new Point(position);
     }
 
-    public void setPosition(Point nextPosition) {
-        this.position = nextPosition;
-    }
-
     public boolean isStill(Point position) {
         return this.position.equals(position);
     }
 
-    public Point nextMove() {
-        return position.randomAdjacentPoint();
+    public Point nextMove(Topology topology) {
+        return position.randomAdjacentPoint(topology);
     }
 }

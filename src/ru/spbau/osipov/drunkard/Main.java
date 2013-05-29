@@ -5,8 +5,11 @@ package ru.spbau.osipov.drunkard;
  */
 public class Main {
     public static void main(String[] args) {
-        DrunkgroundView drunkgroundView = new DrunkgroundView();
-        if (args.length != 0 && args[0].equals("debug")) {
+        if (args.length < 1) {
+            System.exit(1);
+        }
+        DrunkgroundView drunkgroundView = new DrunkgroundView(Boolean.parseBoolean(args[0]));
+        if (args.length > 1 && args[1].equals("debug")) {
             drunkgroundView.setDebug(true);
         }
         drunkgroundView.startWalking();

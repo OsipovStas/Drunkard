@@ -26,7 +26,7 @@ public class Drunkard extends DynamicGameObject {
 
     @Override
     public void updatePosition(Point nextPosition) {
-        if (hasBottle && !nextPosition.equals(getPosition()) && rng.nextInt(100) > 70) {
+        if (hasBottle && !nextPosition.equals(getPosition()) && rng.nextInt(100) > 95) {
             fireFallEvent(new Bottle(getPosition()));
             hasBottle = false;
         }

@@ -12,4 +12,8 @@ public interface MoveListener {
     void fallPerformed(StaticGameObject fallen);
 
     void pickUpPerformed(StaticGameObject fallen);
+
+    void gonePerformed(DynamicGameObject mover);
+
+    void enterPerformed(DynamicGameObject mover);
 }
