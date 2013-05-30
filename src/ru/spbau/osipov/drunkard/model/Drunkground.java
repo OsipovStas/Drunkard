@@ -1,4 +1,4 @@
-package ru.spbau.osipov.drunkard;
+package ru.spbau.osipov.drunkard.model;
 
 import ru.spbau.osipov.drunkard.bfs.PointValidator;
 import ru.spbau.osipov.drunkard.buildings.RecyclePoint;

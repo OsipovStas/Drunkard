@@ -1,5 +1,7 @@
 package ru.spbau.osipov.drunkard;
 
+import ru.spbau.osipov.drunkard.view.DrunkgroundView;
+
 /**
  * @author Osipov Stanislav
  */

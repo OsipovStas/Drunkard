@@ -1,5 +1,6 @@
-package ru.spbau.osipov.drunkard;
+package ru.spbau.osipov.drunkard.view;
 
+import ru.spbau.osipov.drunkard.model.Drunkground;
 import ru.spbau.osipov.drunkard.points.HexTopology;
 import ru.spbau.osipov.drunkard.points.RectangularTopology;
 
@@ -25,7 +26,12 @@ public class DrunkgroundView {
 
     public void show(int stepNumber) {
         System.out.println("Step # " + stepNumber);
-        for (char[] chars : drunkGround.getView()) {
+        char[][] view = drunkGround.getView();
+        for (int i = 0; i < view.length; ++i) {
+            char[] chars = view[i];
+            if (i > 0 && i % 2 == 0) {
+                System.out.print(" ");
+            }
             for (char aChar : chars) {
                 System.out.print(aChar);
             }

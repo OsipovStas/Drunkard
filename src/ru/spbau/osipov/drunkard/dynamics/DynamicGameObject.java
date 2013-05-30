@@ -1,8 +1,8 @@
 package ru.spbau.osipov.drunkard.dynamics;
 
-import ru.spbau.osipov.drunkard.ChangeListener;
-import ru.spbau.osipov.drunkard.GameObject;
-import ru.spbau.osipov.drunkard.MoveListener;
+import ru.spbau.osipov.drunkard.model.ChangeListener;
+import ru.spbau.osipov.drunkard.model.GameObject;
+import ru.spbau.osipov.drunkard.model.MoveListener;
 import ru.spbau.osipov.drunkard.points.Point;
 import ru.spbau.osipov.drunkard.points.Topology;
 import ru.spbau.osipov.drunkard.statics.StaticGameObject;

@@ -1,4 +1,4 @@
-package ru.spbau.osipov.drunkard;
+package ru.spbau.osipov.drunkard.model;
 
 import ru.spbau.osipov.drunkard.dynamics.DynamicGameObject;
 import ru.spbau.osipov.drunkard.statics.StaticGameObject;

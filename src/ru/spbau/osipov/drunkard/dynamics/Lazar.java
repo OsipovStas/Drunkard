@@ -1,10 +1,10 @@
 package ru.spbau.osipov.drunkard.dynamics;
 
-import ru.spbau.osipov.drunkard.Drunkground;
-import ru.spbau.osipov.drunkard.GameObject;
 import ru.spbau.osipov.drunkard.bfs.PathFinder;
 import ru.spbau.osipov.drunkard.bfs.PointValidator;
 import ru.spbau.osipov.drunkard.buildings.RecyclePoint;
+import ru.spbau.osipov.drunkard.model.Drunkground;
+import ru.spbau.osipov.drunkard.model.GameObject;
 import ru.spbau.osipov.drunkard.points.Point;
 import ru.spbau.osipov.drunkard.points.Topology;
 import ru.spbau.osipov.drunkard.statics.Bottle;

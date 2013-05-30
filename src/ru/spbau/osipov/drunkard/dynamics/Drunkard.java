@@ -1,7 +1,7 @@
 package ru.spbau.osipov.drunkard.dynamics;
 
-import ru.spbau.osipov.drunkard.GameObject;
-import ru.spbau.osipov.drunkard.MoveListener;
+import ru.spbau.osipov.drunkard.model.GameObject;
+import ru.spbau.osipov.drunkard.model.MoveListener;
 import ru.spbau.osipov.drunkard.points.Point;
 import ru.spbau.osipov.drunkard.statics.Bottle;
 import ru.spbau.osipov.drunkard.statics.Column;

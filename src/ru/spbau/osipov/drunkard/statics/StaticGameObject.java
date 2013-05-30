@@ -1,6 +1,6 @@
 package ru.spbau.osipov.drunkard.statics;
 
-import ru.spbau.osipov.drunkard.GameObject;
+import ru.spbau.osipov.drunkard.model.GameObject;
 import ru.spbau.osipov.drunkard.points.Point;
 
 /**
