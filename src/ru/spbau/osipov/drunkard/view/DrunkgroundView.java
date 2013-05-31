@@ -11,8 +11,10 @@ public class DrunkgroundView {
     private final static int STEP_NUMBER = 500;
     private final Drunkground drunkGround;
     private boolean debug = false;
+    private boolean hex = false;
 
     public DrunkgroundView(boolean hex) {
+        this.hex = hex;
         if (hex) {
             this.drunkGround = new Drunkground(new HexTopology());
         } else {
@@ -29,11 +31,11 @@ public class DrunkgroundView {
         char[][] view = drunkGround.getView();
         for (int i = 0; i < view.length; ++i) {
             char[] chars = view[i];
-            if (i > 0 && i % 2 == 0) {
+            if (hex && i > 0 && i % 2 == 0) {
                 System.out.print(" ");
             }
             for (char aChar : chars) {
-                System.out.print(aChar);
+                System.out.print(aChar + " ");
             }
             System.out.println();
         }

@@ -11,9 +11,9 @@ public class HexTopology implements Topology {
     public List<Point> getAdjacentPoints(Point position) {
         int x = position.getX();
         int y = position.getY();
-        boolean even = y % 2 == 0;
-        int dx = even ? 0 : 1;
-        return Arrays.asList(new Point(x - 1, y), new Point(x + 1, y), new Point(x - 1 + dx, y - 1),
-                new Point(x + dx, y - 1), new Point(x - 1 + dx, y + 1), new Point(x + dx, y + 1));
+        boolean even = x % 2 == 0;
+        int dy = even ? 0 : 1;
+        return Arrays.asList(new Point(x, y - 1), new Point(x, y + 1), new Point(x - 1, y - 1 + dy),
+                new Point(x - 1, y + dy), new Point(x + 1, y - 1 + dy), new Point(x + 1, y + dy));
     }
 }
